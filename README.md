@@ -83,6 +83,8 @@ Make sure to replace `name-of-the-profile` and `your-own-name-space`.
 
 ### Types and Twins Creation
 
+Here I'm going to create a digital twin for a sensor that measures the temperature, humidity, and CO2 level.
+
 #### Creating a Type
 click on `create new type` button
 ![newtype](./embedded-images/newtype.png)
