@@ -1,6 +1,10 @@
 __Perspicuous documentation for__ __[`OpenTwins`](https://github.com/ertis-research/opentwins/tree/main)__ __platform by__ __[Eshan Jayasundara](https://www.linkedin.com/in/eshan-jayasundara/).__
 
 # 1. Quick deployment
+
+## Simplified Architecture of the Essential Functionality
+![opentwins](./embedded-images/opentwins.png)
+
 ## Prerequisits
 + Minikube single node kubernetes cluster (for container ocaustration)
 + Kubctl (kubernetes command line interface for intract with minikube cluster)
