@@ -36,7 +36,7 @@ helm repo add ertis https://ertis-research.github.io/Helm-charts/
 helm upgrade --install opentwins ertis/OpenTwins -n <your-own-name-space> --dependency-update --debug
 ```
 
-### Wait until all the services, pods, and deployments are up and running after installation.
+### Wait until all the services, pods, and deployments are up and running after installation
 + To check the status of pods
 ```
 kubectl get pods -n <your-own-name-space>
@@ -57,7 +57,7 @@ kubectl delete pod <pod-name> -n <your-own-name-space>
 ```
 Take a note of them. Run the above command by replacing `pod_name` with the actual pod name and `your-own-name-space` with the namespace that you have noted before.
 
-### Access Grafana from the browser.
+### Access Grafana from the browser
 ```
 minikube service -n <your-own-name-space> opentwins-grafana --url -p <name-of-the-profile>
 ```
