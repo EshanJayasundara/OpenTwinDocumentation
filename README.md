@@ -6,10 +6,10 @@ __Perspicuous documentation for__ __[`OpenTwins`](https://github.com/ertis-resea
 ![opentwins](./embedded-images/opentwins.png)
 
 ## Prerequisits
-+ Minikube single node kubernetes cluster (for container ocaustration)
-+ Kubctl (kubernetes command line interface for intract with minikube cluster)
-+ Docker (for containarization)
-+ Helm (to copy charts from the helm repository)
++ [Minikube single node kubernetes cluster](https://minikube.sigs.k8s.io/docs/start/?arch=%2Flinux%2Fx86-64%2Fstable%2Fbinary+download) (for container ocaustration)
++ [Kubctl](https://kubernetes.io/docs/tasks/tools/install-kubectl-linux/#install-using-native-package-management) (kubernetes command line interface for intract with minikube cluster)
++ [Docker](https://docs.docker.com/engine/install/ubuntu/#install-using-the-repository) (for containarization)
++ [Helm](https://helm.sh/docs/intro/install/) (to copy charts from the helm repository)
 + Linux base Operating System (tested on ubuntu)
 
 ## Steps to follow
@@ -20,13 +20,13 @@ minikube start --cpus 4 --disk-size 40gb --memory 8192 -p <name-of-the-profile>
 ```
 change `name-of-the-profile` field as you need but keep it remember for later steps.
 
-### Create a namespace in kubernetes
+### Create a namespace in Kubernetes
 ```
 kubectl create namespace <your-own-name-space>
 ```
-replace `your-own-name-space` with as you wish but keep it remember for future use.
+replace `your-own-name-space` with as you wish but keep it remembered for future use.
 
-### Add helm repocitory into the charts
+### Add helm repository into the charts
 ```
 helm repo add ertis https://ertis-research.github.io/Helm-charts/
 ```
@@ -36,8 +36,8 @@ helm repo add ertis https://ertis-research.github.io/Helm-charts/
 helm upgrade --install opentwins ertis/OpenTwins -n <your-own-name-space> --dependency-update --debug
 ```
 
-### Wait until all the services, pods and deployments are up and running after install.
-+ To chek the status of pods
+### Wait until all the services, pods, and deployments are up and running after installation.
++ To check the status of pods
 ```
 kubectl get pods -n <your-own-name-space>
 ```
@@ -49,19 +49,19 @@ kubectl get services -n <your-own-name-space>
 ```
 kubectl get deployments -n <your-own-name-space>
 ```
-_you may need to check those with executing above commands repetedly in another terminal_
+_you may need to check those with executing the above commands repeatedly in another terminal_
 
-### If some pods are in Completed state
+### If some pods are in the Completed state
 ```
 kubectl delete pod <pod-name> -n <your-own-name-space>
 ```
-Take a note of them. And run the above command by replacing `pod_name` with the actual pod name and `your-own-name-space` with the namespace that you have noted before.
+Take a note of them. Run the above command by replacing `pod_name` with the actual pod name and `your-own-name-space` with the namespace that you have noted before.
 
 ### Access Grafana from the browser.
 ```
 minikube service -n <your-own-name-space> opentwins-grafana --url -p <name-of-the-profile>
 ```
-Default username and password both are “admin”
+The default username and password both are “admin”
 
 ### At this point the cluster needs a restart to detect the OpenTwins GUI (maybe optional)
 ```
@@ -73,7 +73,7 @@ Ensure everything is back up and running
 ### Log into Grafana and access the OpenTwins plugin 
 `Home -> Administration -> Plugins -> OpenTwins`
 
-___The plugin needs some configuration. The default ditto username and password is “ditto”. For developer account username is "devops" and password is "foobar". As for the urls use the outputs of the following commands.___
+___The plugin needs some configuration. The default ditto username and password is “ditto”. For the developer account username is "devops" and password is "foobar". As for the URLs use the outputs of the following commands.___
 ```
 minikube service -n <your-own-name-space> opentwins-ditto-nginx --url -p <name-of-the-profile>
 
@@ -81,7 +81,7 @@ minikube service -n <your-own-name-space> opentwins-ditto-extended-api --url -p 
 ```
 Make sure to replace `name-of-the-profile` and `your-own-name-space`.
 
-### Types and Twins creation
+### Types and Twins Creation
 
 #### Creating a Type
 click on `create new type` button
@@ -90,23 +90,23 @@ provide the necessary details and fill the form. __Don't forget to use the `defa
 ![typesensor1](./embedded-images/typesensor1.png)
 Add features
 ![typesensor2](./embedded-images/typesensor2.png)
-finally the preview of the type in Ditto protocol looks like this
+finally, the preview of the type in Ditto protocol looks like this
 ![typesensorditto](./embedded-images/typesensorditto.png)
 
-#### Creating a Twin Using type Template
+#### Creating a Twin Using Type Template
 click on `create new twin` button
 ![newtwin](./embedded-images/newtwin.png)
 provide the necessary namespace and id. __Don't use the same names used for creating twins because they are the instances of the type which we have created above.__
 ![twinmysensor1](./embedded-images/twinmysensor1.png)
 from `existing types` choose the one just created before as the `type of twin`.
 ![twinmysensor2](./embedded-images/twinmysensor2.png)
-##### finally the preview of the twin in Ditto protocol looks like this
+##### Finally the preview of the twin in the Ditto protocol looks like this
 ![twinmysensorditto](./embedded-images/twinmysensorditto.png)
 
 ### Establish mqtt-5 connection in ditto
 __`Important:`__</br>
 __Replace uri s with actual ones in your cluster including the curl command url.__</br>
-__Python script and this connection request both shoud have the same topic.__
+__Python script and this connection request both should have the same topic.__
 ```
 curl -i -u devops:foobar -X POST http://192.168.49.2:30525/api/2/connections -H 'Content-Type: application/json' -d '{
   "name": "mymqtt_connection",
@@ -265,7 +265,7 @@ except KeyboardInterrupt:
     client.disconnect()
 ```
 
-After configuring all, run the python script. Twin should show the published informations as shown in the image below,
+After configuring all, run the Python script. Twin should show the published information as shown in the image below,
 ![twindatamqtt](./embedded-images/twindatamqtt.png)
 
 ### Deploying the kafka pod into the same minikube cluster
@@ -298,16 +298,16 @@ opentwins-mongodb              NodePort
 opentwins-mosquitto            NodePort  
 zookeeper                      NodePort  
 ```
-If there is a service type diffrent from above, please use the command blow and edit the service type,
+If there is a service type different from the above, please use the command below and edit the service type,
 ```
 kubectl edit service <service-name> -n <your-own-namespace>
 ```
 replace `<service-name>` and `<your-own-namespace>` with actual names.
 
-### Establishing kafka connection in ditto
+### Establishing Kafka connection in Ditto
 
 __`Important:`__</br>
-__Replace uri s with actual ones in your cluster including the curl command url.__</br>
+__Replace uri s with actual ones in your cluster including the curl command URL.__</br>
 
 There are two methods, please use only one from below.</br>
 
@@ -397,9 +397,9 @@ curl -i -X DELETE -u devops:foobar http://192.168.49.2:30525/api/2/connections/<
 ```
 
 ### Telegraf + Influxdb configuration
-Influxdb pod is comes defaut with the minikube cluster which you have just created initially,
+Influxdb pod comes default with the minikube cluster which you have just created initially,
 
-access influxdb + telegraf url with
+access influxdb + telegraf URL with
 ```
 kubectl get services -n <your-own-name-space> # list all services
 
@@ -410,13 +410,13 @@ __`password: password`__
 
 ![influxdbui](./embedded-images/influxdbui.png)
 
-generate an api token with all permissions and copy it to chipboard using Influxdb UI
+generate an API token with all permissions and copy it to chipboard using Influxdb UI
 ![influxapikey1](./embedded-images/influxapikey1.png)
 ![influxapikey2](./embedded-images/influxapikey2.png)
 copy the apikey/token by selecting and right clicking on it.
 ![influxapikey3](./embedded-images/influxapikey3.png)
 
-click create a configuration
+Click Create a configuration
 ![influxinputplugin1](./embedded-images/influxinputplugin1.png)
 Choose "default" bucket and kafka-consumer plugin
 ![influxinputplugin2](./embedded-images/influxinputplugin2.png)
@@ -434,7 +434,7 @@ kubectl edit configmap <telegraf> -n <your-own-namespace>
 ```
 __`telegraf`__ - __represents all configmaps including the substring "telegraf"__</br>
 
-edit all configmaps using downloaded file (mostly may look like below example)
+edit all configmaps using downloaded file (mostly may look like the below example)
 </br>
 
 for example:
@@ -491,7 +491,7 @@ Configure it as sown in the images below
 ```
 minikube service -n <your-own-namespace> opentwins-influxdb2 --url -p <name-of-the-profile>
 ```
-find the url with above command
+find the URL with the above command
 
 ![grafanainfluxconfig1.png](./embedded-images/grafanainfluxconfig1.png)
 ![grafanainfluxconfig2.png](./embedded-images/grafanainfluxconfig2.png)
@@ -502,7 +502,7 @@ Save and test the connection
 create a new dashboard</br>
 `Home -> Dashboards`
 
-And choose InfluxDB as the datasource for quering
+And choose InfluxDB as the data source for quering
 ![queryinfluxdb1](./embedded-images/queryinfluxdb1.png)
 
 example query:
@@ -522,9 +522,9 @@ from(bucket: "default")
 
 ___`This issue is to fix soon by using a permenent pod name`___
 
-### Final dashboard should look like this
+### The final dashboard should look like this
 ![Dashboard](./embedded-images/dashboard.png)
 
-### Congradulation you're all set.
+#### Congratulations you're all set.
 
 # 2. In detail about deployment
