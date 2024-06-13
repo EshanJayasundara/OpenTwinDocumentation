@@ -504,7 +504,7 @@ Save and test the connection
 create a new dashboard</br>
 `Home -> Dashboards`
 
-And choose InfluxDB as the data source for quering
+choose InfluxDB as the data source for querying and `gauge` as the visualization. Add a title. Then, apply some overrides to change the `display names` of the gauges. __Don't forget to save the changes.__
 ![queryinfluxdb](./embedded-images/queryinfluxdb.png)
 
 example query:
