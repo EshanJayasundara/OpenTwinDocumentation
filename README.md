@@ -1,6 +1,6 @@
 __Perspicuous documentation for__ __[`OpenTwins`](https://github.com/ertis-research/opentwins/tree/main)__ __platform by__ __[Eshan Jayasundara](https://www.linkedin.com/in/eshan-jayasundara/).__
 
-# 1. Quick deployment
+# 1. Quick Deployment
 
 ## Simplified Architecture of the Essential Functionality
 ![opentwins](./embedded-images/opentwins.png)
@@ -534,5 +534,5 @@ ___`This issue is to fix soon by using a permenent pod name`___
 2. https://github.com/ertis-research/opentwins/blob/main/docs/docs/installation/manual-deploy/core.md
 3. https://github.com/ertis-research/opentwins/tree/main/files_for_manual_deploy
 
-# 2. In detail about deployment
+# 2. Deployment in Detail
 ### #To Do
