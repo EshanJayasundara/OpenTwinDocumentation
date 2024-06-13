@@ -523,7 +523,7 @@ from(bucket: "default")
 
 `telegraf-57cfdcb85c-dgflc` is the name of telegraf pod. I had to change this wehenever restarting the minikube cluster because I got different telegraf pod names after restarting the minikube cluster using `minikube stop -p <name-of-the-profile>` and `minikube start -p <name-of-the-profile>` and the pod name also includes with the time series data.
 
-___`This issue is to fix soon by using a permenent pod name`___
+___`This issue was fixed by setting the number of replicas in telegraf deployment to 1`___
 
 ### The final dashboard should look like this
 ![Dashboard](./embedded-images/dashboard.png)
