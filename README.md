@@ -434,9 +434,9 @@ editing them one by one
 ```
 kubectl edit configmap <telegraf> -n <your-own-namespace>
 ```
-__`telegraf`__ - __represents any configmap including the substring "telegraf"__</br>
+__`telegraf`__ - __represents the name of any configmap including the substring "telegraf"__</br>
 
-edit all configmaps one by one using downloaded file (mostly may look like the below example)
+edit all configmaps one by one using the downloaded file (most of the time it may look like the below example)
 </br>
 
 for example:
