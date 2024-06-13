@@ -73,7 +73,7 @@ Ensure everything is back up and running
 ### Log into Grafana and access the OpenTwins plugin 
 `Home -> Administration -> Plugins -> OpenTwins`
 
-___The plugin needs some configuration. The default ditto username and password is “ditto”. For the developer account username is "devops" and password is "foobar". As for the URLs use the outputs of the following commands.___
+__The plugin needs some configuration. The default ditto _username_ and _password_ both are `ditto`. For the developer account _username_ is `devops` and _password_ is `foobar`. As for the URLs use the outputs of the following commands.__
 ```
 minikube service -n <your-own-name-space> opentwins-ditto-nginx --url -p <name-of-the-profile>
 
