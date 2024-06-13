@@ -1,4 +1,4 @@
-__Perspicuous documentation for__ __[`OpenTwins`](https://github.com/ertis-research/opentwins/tree/main)__ __platform by__ __[Eshan Jayasundara](https://www.linkedin.com/in/eshan-jayasundara/).__</br>
+### Perspicuous documentation for [`OpenTwins`](https://github.com/ertis-research/opentwins/tree/main) platform by [Eshan Jayasundara](https://www.linkedin.com/in/eshan-jayasundara/).</br>
 
 What is a digital twin in a high-level view? [Watch This](https://www.youtube.com/watch?v=60eCpw0Toy4)
 # 1. Quick Deployment
