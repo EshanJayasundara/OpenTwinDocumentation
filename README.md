@@ -529,5 +529,10 @@ ___`This issue is to fix soon by using a permenent pod name`___
 
 #### Congratulations you're all set.
 
+## References
+1. https://github.com/ertis-research/opentwins/blob/main/docs/docs/quickstart.mdx
+2. https://github.com/ertis-research/opentwins/blob/main/docs/docs/installation/manual-deploy/core.md
+3. https://github.com/ertis-research/opentwins/tree/main/files_for_manual_deploy
+
 # 2. In detail about deployment
 ### #To Do
