@@ -505,7 +505,7 @@ create a new dashboard</br>
 `Home -> Dashboards`
 
 And choose InfluxDB as the data source for quering
-![queryinfluxdb1](./embedded-images/queryinfluxdb1.png)
+![queryinfluxdb](./embedded-images/queryinfluxdb.png)
 
 example query:
 ```
