@@ -77,7 +77,7 @@ try:
         temperature, humidity, co2 = generate_air_data()
         msg = get_ditto_protocol_msg(sensor_name, get_ditto_protocol_value_air(t, temperature, humidity, co2))
         client.publish(topic + namespace + "/" + sensor_name, json.dumps(msg))
-        print(f"{sensor_name} data published")
+        print(t, temperature, humidity, co2, f"{sensor_name} data published", sep="|")
 
         time.sleep(5)
 
